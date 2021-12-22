@@ -41,12 +41,13 @@ def chuck():
         for i in range(len(tt)):
             print("- ",tt["result"][i]["value"],str("["+tt["result"][i]["id"]+"]"))
 
-    
 
+            
     else:
         data = requests.get("https://api.chucknorris.io/jokes/random")
         tt = json.loads(data.text)
         print(tt["value"],str("["+tt["id"]+"]"))
+
     
 
 def chuckAvecJoke():
@@ -61,5 +62,4 @@ try:
         chuck()
 except HTTPError as e:
     print("e")
-except:
-    print("error 404")
+
